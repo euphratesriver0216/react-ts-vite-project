@@ -1,30 +1,17 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./App.css";
 
-let name: string;
-let age: number;
-let isStudent: boolean;
-let hobbies: string[];
-let role: [number, string];
+import InputFeild from "./components/InputFeild";
 
-type Person = {
-  naem: string;
-  age: number;
-  // age?: number; type을 옵션으로 넣을 수 있다.
+const App: React.FC = () => {
+  const [todo, setTodo] = useState<string | number>("");
+  console.log(todo);
+  return (
+    <div className="App">
+      <span className="haeding">HAEMIN's TODO LIST</span>
+      <InputFeild todo={todo} setTodo={setTodo} />
+    </div>
+  );
 };
-
-let person: Person = {
-  //타입지정 후
-  naem: "haemin",
-
-  age: 5,
-  //타입 지정 앞에 age?: number; 옵션지정 할경유우
-};
-
-role = [5, "haein"];
-
-function App() {
-  return <div className="App">haemin app</div>;
-}
 
 export default App;
